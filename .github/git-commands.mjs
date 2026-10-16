@@ -98,7 +98,7 @@ function countLines(files) {
   return Object.entries(files).map(([p, c]) => `${p}:+${c.added}-${c.deleted}${c.isBinary ? ':binary' : ''}`).sort()
 }
 
-const base = fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(), 'filemap-ci-')))
+const base = fs.realpathSync.native(fs.mkdtempSync(path.join(os.tmpdir(), 'filemap-ci-')))
 const repo = path.join(base, 'repo')
 process.on('exit', () => fs.rmSync(base, { recursive: true, force: true }))
 const hasLfs = spawnSync('git', ['lfs', 'version']).status === 0
@@ -140,7 +140,7 @@ run(['git', 'worktree', 'add', '-q', '-b', 'agent-1', '.claude/worktrees/agent-1
 run(['git', '-c', 'worktree.useRelativePaths=true', 'worktree', 'add', '-q', '-b', 'agent-2', '.claude/worktrees/agent-2'], repo)
 
 const top = parseTop(git(repo, TOP_ARGS))
-check(fs.realpathSync(top.root) === repo, `rev-parse names the root ${top.root}`)
+check(fs.realpathSync.native(top.root) === repo, `rev-parse names the root ${top.root}`)
 const worktrees = `${absolute(top.commonDir, '')}/worktrees`
 const gitDirs = fs.readdirSync(worktrees).map(id => absolute(fs.readFileSync(`${worktrees}/${id}/gitdir`, 'utf8').trim(), `${worktrees}/${id}`))
 const inIgnored = nestedIn(top.root, gitDirs.map(folderOf))
