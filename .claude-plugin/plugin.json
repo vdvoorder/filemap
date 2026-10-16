@@ -1,0 +1,32 @@
+{
+  "name": "filemap",
+  "version": "0.1.0",
+  "description": "Draws a git repository as a treemap in a side pane and marks the files that Claude reads and the lines that change while the pane is open.",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "Ruben Van de Voorde"
+  },
+  "license": "MIT",
+  "keywords": [
+    "treemap",
+    "git",
+    "mod",
+    "pane"
+  ],
+  "userConfig": {
+    "opener": {
+      "type": "string",
+      "title": "Open files with",
+      "description": "One program that opens every file you open from the map, such as code or the full path of an .exe, and on macOS the name of an app, such as Visual Studio Code. Empty: each file opens in the default app of its type. A script that the system would run, such as .py or .cmd on Windows or a file with the execute bit on Linux, opens in the default text editor instead, and a type such as .exe, .msi or .jar does not open.",
+      "default": ""
+    },
+    "paneWidth": {
+      "type": "number",
+      "title": "Pane width",
+      "description": "Columns of the pane beside the conversation, from 40 to 200. Takes effect at the next /filemap. A terminal narrower than this width plus 25 columns gives a narrower pane, since the conversation keeps 24 and the edge of the pane 1, and a width you drag the edge of the pane to wins. Under 110 columns, or outside the fullscreen layout, the pane opens above the prompt as wide as the terminal.",
+      "default": 64,
+      "min": 40,
+      "max": 200
+    }
+  }
+}

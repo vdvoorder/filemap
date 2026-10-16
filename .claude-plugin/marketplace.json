@@ -1,0 +1,16 @@
+{
+  "name": "filemap",
+  "owner": {
+    "name": "Ruben Van de Voorde"
+  },
+  "metadata": {
+    "description": "Draws a git repository as a treemap in a side pane and marks the files that Claude reads and the lines that change while the pane is open."
+  },
+  "plugins": [
+    {
+      "name": "filemap",
+      "description": "Draws a git repository as a treemap in a side pane and marks the files that Claude reads and the lines that change while the pane is open.",
+      "source": "./"
+    }
+  ]
+}
