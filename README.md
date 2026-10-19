@@ -85,4 +85,10 @@ When this setting names a program, that program opens these files too.
 
 ## Contributing
 
+filemap does not accept pull requests; open an issue for bugs and ideas.
+
 Run the tests with `claude plugin test .`. The pre-commit hook in .githooks runs the checks and needs Node 22.18 or later; turn it on with `git config core.hooksPath .githooks`.
+
+## License
+
+Sustainable Use License 1.0, in [LICENSE](LICENSE). You may use and change filemap for yourself, for the internal work of the company you work for, or for any non-commercial purpose, and you may share it free of charge for non-commercial purposes. Selling filemap, or shipping it or a changed copy as part of a product or service that you sell, needs a separate license from Ruben Van de Voorde.
